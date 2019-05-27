@@ -12,14 +12,14 @@ title: Aspiring Product Manager
 <section>
 	<h2>My Projects</h2>
 	<ul>
-		{{ for project in site.data.projects.projects }}
+		{% for project in site.data.projects.projects %}
 		<li>
 
-		<h3>{{ project.org }}</h3>
+		<h3>{% project.org %}</h3>
 
 
 		</li>
-		{{ endfor }}
+		{% endfor %}
 	</ul>
 </section>
 <section>
