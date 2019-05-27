@@ -1,8 +1,27 @@
 ---
 layout: default
-title: Luke Dobson, Aspiring Product Manager
+title: Aspiring Product Manager
 ---
-<div class="blurb">
-	<h1>Hi there, I'm Luke!</h1>
-		<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-</div><!-- /.blurb -->
+<section class="hero">
+	<h2>Luke Dobson</h2>
+	<p>I'm a senior at Yale University majoring in electrical engineering and am passionate about the intersection of technology and business strategy. I am excited to apply my strengths in efficiency and technology to full-time opportunities.  See what I've worked on below.
+</section>
+<!-- <section>
+	<h2>Who I Am</h2>
+</section> -->
+<section>
+	<h2>My Projects</h2>
+	<ul>
+		{{ for project in site.data.projects.projects }}
+		<li>
+
+		<h3>{{ project.org }}</h3>
+
+
+		</li>
+		{{ endfor }}
+	</ul>
+</section>
+<section>
+	<h2>Let's Connect</h2>
+</section>
