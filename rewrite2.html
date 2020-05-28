@@ -2,7 +2,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/laptop.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container" id="container">
@@ -11,19 +11,22 @@
 		<span class="red">Luke's </span>
 		<span class="green">Lights</span>
 	</div>
-	<div class="item yale">
+	<div class="item yale" data-title="Yale Alumnus" data-content="Luke graduated during the COVID-19 pandemic in 2020 with an ABET-accredited bachelor of science in electrical engineering.  He was in Branford College and was vice president of MathCounts.">
 		Y
 	</div>
-	<div class="item roller-coaster">
+	<div class="item roller-coaster" data-title="Storyteller" data-content="Luke enjoys empathsizing with users to craft stories.  Sometimes it's through product management, but other times it's through immersive theme park experiences -- Luke is a roller coaster fanatic, having ridden more than 40 different roller coasters.">
 		<img src="assets/laptop/roller-coaster.png" width="300px"/>
 	</div>
-	<div class="item linkedin">
+	<div class="item linkedin" data-href="https://linkedin.com/in/ldobson98/">
 		<img src="assets/laptop/linkedin.svg" width="100px"/>
 	</div>
-	<div class="item skyline">
+	<div class="item skyline" data-title="An Adventurer" data-content="Luke hails from New Hampshire, but has since moved to Connecticut for college and New York City for employment.">
 		<img src="assets/laptop/nyc.png" width="400px"/>
 	</div>
-	<div class="notes" id="notes">Click the laptop stickers to learn more about my interests and projects.</div>
+	<div class="notes" id="notes">
+		<h3 id="notesHeader">Shopping List</h3>
+		<p id="notesBody">Click the laptop stickers to learn more about my interests and projects.</p>
+	</div>
 </div>
 <section class="intro" id="intro">
 	<div class="laptop" id="laptop">
@@ -50,7 +53,7 @@
 <section>
 	<p style="text-align: center;"><a href="https://linkedin.com/in/ldobson98/" target="_blank">Let's Connect >> </a></p>
 </section> -->
-<script>
+<script type="text/javascript">
 		// set up text to print, each item in array is new line
 var aText = new Array(
 "Hi, I'm Luke Dobson - thanks for stopping by.  Explore this website to learn more about me.");
@@ -88,7 +91,7 @@ function typewriter()
 
 typewriter();
 </script>
-<script>
+<script type="text/javascript">
 	function sleep(milliseconds) { 
             let timeStart = new Date().getTime(); 
             while (true) { 
@@ -110,6 +113,16 @@ typewriter();
 		//document.getElementById("laptop").style.display = "none";
 		document.getElementById("container").style.top = "0";
 	}
+</script>
+<script type="text/javascript">
+	$(".item").click(function() {
+		if ($(this).attr('data-href') == undefined) {
+			document.getElementById("notesHeader").innerHTML = $(this).attr('data-title')
+			document.getElementById("notesBody").innerHTML = $(this).attr('data-content')
+		} else {
+			window.open($(this).attr('data-href'),"_blank");
+		}
+	})
 </script>
 </body>
 </html>
