@@ -1,0 +1,115 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/laptop.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="container" id="container">
+	<div class="fa fa-star laptoplogo"></div>
+	<div class="item lukeslights" data-href="https://lukeslightsnh.com">
+		<span class="red">Luke's </span>
+		<span class="green">Lights</span>
+	</div>
+	<div class="item yale">
+		Y
+	</div>
+	<div class="item roller-coaster">
+		<img src="assets/laptop/roller-coaster.png" width="300px"/>
+	</div>
+	<div class="item linkedin">
+		<img src="assets/laptop/linkedin.svg" width="100px"/>
+	</div>
+	<div class="item skyline">
+		<img src="assets/laptop/nyc.png" width="400px"/>
+	</div>
+	<div class="notes" id="notes">Click the laptop stickers to learn more about my interests and projects.</div>
+</div>
+<section class="intro" id="intro">
+	<div class="laptop" id="laptop">
+		<div class="content">
+			<div id="typedtext"></div>
+			<div id="enterButton" >Enter ></div>
+		</div>
+	</div>
+</section>
+<footer><p>Copyright Luke Dobson.  All rights reserved.</p></footer>
+
+<!-- <section class="hero">
+	<h2>Luke Dobson</h2>
+	<p>I'm an alumnus from Yale with a degree in electrical engineering, working in consulting with a passion for storytelling.</p>
+</section> -->
+<!-- <section>
+	<h2>Who I Am</h2>
+</section> -->
+<!-- <section class="project ll">
+	<h2>Luke's Lights</h2>
+	<p>A synchronized holiday light show I created which has collected 24,000+ pounds of food for the community's food pantry.  <a href="http://lukeslightsnh.com" target="_blank">Learn More >></a>
+	</ul>
+</section>
+<section>
+	<p style="text-align: center;"><a href="https://linkedin.com/in/ldobson98/" target="_blank">Let's Connect >> </a></p>
+</section> -->
+<script>
+		// set up text to print, each item in array is new line
+var aText = new Array(
+"Hi, I'm Luke Dobson - thanks for stopping by.  Explore this website to learn more about me.");
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+</script>
+<script>
+	function sleep(milliseconds) { 
+            let timeStart = new Date().getTime(); 
+            while (true) { 
+                let elapsedTime = new Date().getTime() - timeStart; 
+                if (elapsedTime > milliseconds) { 
+                    break; 
+                } 
+            } 
+        } 
+
+	document.getElementById("enterButton").onclick = function() {toCover()};
+	function toCover() {
+		// document.getElementById("laptop").style.height = "0px";
+		// document.getElementById("laptop").style.overflow = "hidden";
+		// document.getElementById("laptop").style.transform = "scale(.6) translate(-50%) rotateX(-110deg)";
+		// document.getElementById("intro").style.marginTop = "500px";
+		document.getElementById("laptop").style.top = "-700px";
+		document.getElementById("container").style.display = "block";
+		//document.getElementById("laptop").style.display = "none";
+		document.getElementById("container").style.top = "0";
+	}
+</script>
+</body>
+</html>
