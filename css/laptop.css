@@ -51,7 +51,7 @@ body {
     width:fit-content;
     position: relative;
     left: 60px;
-    top: 0px;
+    top: -20px;
     transform: rotate(-5deg);
 }
 
@@ -116,10 +116,10 @@ body {
 }
 
 .notes {
-    height: 190px;
+    height: 220px;
     width: 380px;
     position: relative;
-    top: -640px;
+    top: -670px;
     left: 70px;
     padding:20px;
     border-top: 5px solid #ecf0f1;
@@ -265,4 +265,5 @@ body {
 
 footer {
     text-align: center;
+    width:1100px;
 }
