@@ -5,13 +5,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="container" id="container">
+<div>
+<section class="container" id="container">
 	<div class="fa fa-star laptoplogo"></div>
-	<div class="item lukeslights" data-href="https://lukeslightsnh.com">
+	<div class="item lukeslights" data-href="http://lukeslightsnh.com">
 		<span class="red">Luke's </span>
 		<span class="green">Lights</span>
 	</div>
-	<div class="item yale" data-title="Yale Alumnus" data-content="Luke graduated during the COVID-19 pandemic in 2020 with an ABET-accredited Bachelor of Science in electrical engineering.  He was in Branford College and was vice president of MathCounts.">
+	<div class="item yale" data-title="Yale Alumnus" data-content="Luke graduated during the COVID-19 pandemic in 2020 with an ABET-accredited Bachelor of Science in Electrical Engineering.  He was in Branford College and was vice president of MathCounts.">
 		Y
 	</div>
 	<div class="item roller-coaster" data-title="Storyteller" data-content="Luke enjoys empathsizing with users to craft stories.  Sometimes it's through product management, but other times it's through immersive theme park experiences -- Luke is a roller coaster fanatic, having ridden more than 40 different roller coasters.">
@@ -20,39 +21,26 @@
 	<div class="item linkedin" data-href="https://linkedin.com/in/ldobson98/">
 		<img src="assets/laptop/linkedin.svg" width="100px"/>
 	</div>
-	<div class="item skyline" data-title="An Adventurer" data-content="Luke hails from New Hampshire, but has since moved to Connecticut for college and New York City for employment.">
+	<div class="item skyline" data-title="Adventurer" data-content="Luke hails from New Hampshire, but has since moved to Connecticut for college and New York City for employment.  He enjoys urban photography and discovering new rooftops.">
 		<img src="assets/laptop/nyc.png" width="400px"/>
 	</div>
 	<div class="notes" id="notes">
 		<h3 id="notesHeader">Grocery List</h3>
-		<p id="notesBody">Click the laptop stickers to learn more about my interests and projects.</p>
+		<p id="notesBody">Click the laptop stickers to learn more about my interests or be redirected to my projects.</p>
 	</div>
-</div>
+</section>
 <section class="intro" id="intro">
-	<div class="laptop" id="laptop">
-		<div class="content">
-			<div id="typedtext"></div>
-			<div id="enterButton" >Enter ></div>
+	<div class="laptop-outer" id="laptop-outer">
+		<div class="laptop-inner" id="laptop-inner">
+			<div class="content">
+				<div id="typedtext"></div>
+				<div id="enterButton" >Enter ></div>
+			</div>
 		</div>
 	</div>
 </section>
+</div>
 <footer><p>Copyright Luke Dobson.  All rights reserved.</p></footer>
-
-<!-- <section class="hero">
-	<h2>Luke Dobson</h2>
-	<p>I'm an alumnus from Yale with a degree in electrical engineering, working in consulting with a passion for storytelling.</p>
-</section> -->
-<!-- <section>
-	<h2>Who I Am</h2>
-</section> -->
-<!-- <section class="project ll">
-	<h2>Luke's Lights</h2>
-	<p>A synchronized holiday light show I created which has collected 24,000+ pounds of food for the community's food pantry.  <a href="http://lukeslightsnh.com" target="_blank">Learn More >></a>
-	</ul>
-</section>
-<section>
-	<p style="text-align: center;"><a href="https://linkedin.com/in/ldobson98/" target="_blank">Let's Connect >> </a></p>
-</section> -->
 <script type="text/javascript">
 		// set up text to print, each item in array is new line
 var aText = new Array(
@@ -104,14 +92,13 @@ typewriter();
 
 	document.getElementById("enterButton").onclick = function() {toCover()};
 	function toCover() {
-		// document.getElementById("laptop").style.height = "0px";
-		// document.getElementById("laptop").style.overflow = "hidden";
-		// document.getElementById("laptop").style.transform = "scale(.6) translate(-50%) rotateX(-110deg)";
-		// document.getElementById("intro").style.marginTop = "500px";
-		document.getElementById("laptop").style.top = "-700px";
+		document.getElementById("laptop-inner").style.height = "0px";
+		document.getElementById("laptop-inner").style.overflow = "hidden";
+		document.getElementById("laptop-inner").style.transform = "rotateX(-80deg)";
+		document.getElementById("laptop-outer").classList.add("laptop-outer-transition");
+		document.getElementById("laptop-outer").style.top = "-600px";
 		document.getElementById("container").style.display = "block";
-		//document.getElementById("laptop").style.display = "none";
-		document.getElementById("container").style.top = "0";
+		document.getElementById("container").style.top = "0px";
 	}
 </script>
 <script type="text/javascript">
