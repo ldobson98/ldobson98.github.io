@@ -265,5 +265,6 @@ body {
 
 footer {
     text-align: center;
-    width:1100px;
+    min-width:1100px;
+    margin:0 auto;
 }
