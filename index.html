@@ -77,16 +77,6 @@ function typewriter()
 typewriter();
 </script>
 <script type="text/javascript">
-	function sleep(milliseconds) { 
-            let timeStart = new Date().getTime(); 
-            while (true) { 
-                let elapsedTime = new Date().getTime() - timeStart; 
-                if (elapsedTime > milliseconds) { 
-                    break; 
-                } 
-            } 
-        } 
-
 	document.getElementById("enterButton").onclick = function() {toCover()};
 	function toCover() {
 		document.getElementById("laptop-inner").style.height = "0px";
